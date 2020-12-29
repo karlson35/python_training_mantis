@@ -2,6 +2,7 @@ __author__ = 'Igor Nikolaev'
 
 from selenium import webdriver
 from fixture.session import SessionHelper
+from fixture.project import ProjectHelper
 
 
 class Application:
@@ -17,6 +18,7 @@ class Application:
         self.wd.implicitly_wait(2)
         self.session = SessionHelper(self)
         self.base_url = base_url
+        self.project = ProjectHelper(self)
 
     def open_home_page(self):
         wd = self.wd
